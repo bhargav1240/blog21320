@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Model\Post;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,14 +15,10 @@ use App\Model\Post;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Auth\LoginController@showLoginForm');
 
-Route::get('date', function(){
-    $timestamp = strtotime('21-03-2020');
-    $date = date("Y-m-d H:i:s", $timestamp);
-    echo $date;
-});
+Auth::routes();
 
-Route::get('posts', 'Post\PostController@index');
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('posts', 'Post\PostController@index')->name('posts');
