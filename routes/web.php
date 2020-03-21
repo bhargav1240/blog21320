@@ -22,3 +22,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('posts', 'Post\PostController@index')->name('posts');
+Route::post('posts/get_all_details', 'Post\PostController@getAllDetails');
