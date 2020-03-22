@@ -1973,10 +1973,46 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      url: 'http://localhost/blog21320/public/',
+      url: "http://localhost/blog21320/public/",
       dateRange: {},
       posts: []
     };
@@ -1985,7 +2021,7 @@ __webpack_require__.r(__webpack_exports__);
     setDateRange: function setDateRange(dateRange) {
       var _this = this;
 
-      axios.post('posts/get_all_details', dateRange).then(function (res) {
+      axios.post("posts/get_all_details", dateRange).then(function (res) {
         _this.posts = res.data;
       });
     }
@@ -37411,103 +37447,136 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.dateRange.start,
-            expression: "dateRange.start"
-          }
-        ],
-        attrs: { type: "date" },
-        domProps: { value: _vm.dateRange.start },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.$set(_vm.dateRange, "start", $event.target.value)
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.dateRange.end,
-            expression: "dateRange.end"
-          }
-        ],
-        attrs: { type: "date" },
-        domProps: { value: _vm.dateRange.end },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.$set(_vm.dateRange, "end", $event.target.value)
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("input", {
-        attrs: { type: "button", value: "submit" },
-        on: {
-          click: function($event) {
-            return _vm.setDateRange(_vm.dateRange)
-          }
-        }
-      })
-    ]),
+  return _c("div", { staticClass: "content-wrapper" }, [
+    _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "col-sm-12" },
-        _vm._l(_vm.posts, function(post) {
-          return _c("div", { key: post.id, staticClass: "m-4" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("div", { staticClass: "card-header" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", [
-                    _vm._v(
-                      "\n                                " +
-                        _vm._s(_vm.posts.title) +
-                        "\n                            "
-                    )
+    _c("section", { staticClass: "content" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.dateRange.start,
+                expression: "dateRange.start"
+              }
+            ],
+            attrs: { type: "date" },
+            domProps: { value: _vm.dateRange.start },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.dateRange, "start", $event.target.value)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.dateRange.end,
+                expression: "dateRange.end"
+              }
+            ],
+            attrs: { type: "date" },
+            domProps: { value: _vm.dateRange.end },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.dateRange, "end", $event.target.value)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "button", value: "submit" },
+            on: {
+              click: function($event) {
+                return _vm.setDateRange(_vm.dateRange)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            { staticClass: "col-sm-12" },
+            _vm._l(_vm.posts, function(post) {
+              return _c("div", { key: post.id, staticClass: "m-4" }, [
+                _c("div", { staticClass: "card" }, [
+                  _c("div", { staticClass: "card-header" }, [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", [
+                        _vm._v(
+                          "\n                                        " +
+                            _vm._s(_vm.posts.title) +
+                            "\n                                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "ml-auto" }, [
+                        _vm._v(
+                          "\n                                        " +
+                            _vm._s(post.date) +
+                            "\n                                    "
+                        )
+                      ])
+                    ])
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "ml-auto" }, [
+                  _c("div", { staticClass: "card-body" }, [
                     _vm._v(
                       "\n                                " +
-                        _vm._s(post.date) +
+                        _vm._s(post.body) +
                         "\n                            "
                     )
                   ])
                 ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _vm._v(
-                  "\n                        " +
-                    _vm._s(post.body) +
-                    "\n                    "
-                )
               ])
-            ])
-          ])
-        }),
-        0
-      )
+            }),
+            0
+          )
+        ])
+      ])
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "content-header" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row mb-2" }, [
+          _c("div", { staticClass: "col-sm-6" }, [
+            _c("h1", { staticClass: "m-0 text-dark" }, [_vm._v("Dashboard")])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-6" }, [
+            _c("ol", { staticClass: "breadcrumb float-sm-right" }, [
+              _c("li", { staticClass: "breadcrumb-item" }, [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Home")])
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "breadcrumb-item active" }, [
+                _vm._v("Dashboard")
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
